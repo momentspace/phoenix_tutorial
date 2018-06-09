@@ -8,3 +8,12 @@ config :phoenix_sample, PhoenixSampleWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+# Configure your database
+config :phoenix_sample, PhoenixSample.Repo,
+  adapter: Ecto.Adapters.MySQL,
+  username: "root",
+  password: "",
+  database: "phoenix_sample_test",
+  hostname: "localhost",
+  pool: Ecto.Adapters.SQL.Sandbox

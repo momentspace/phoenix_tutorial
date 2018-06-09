@@ -27,7 +27,11 @@ defmodule PhoenixSampleWeb.ConnCase do
   end
 
 
-  setup _tags do
+  setup tags do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PhoenixSample.Repo)
+    unless tags[:async] do
+      Ecto.Adapters.SQL.Sandbox.mode(PhoenixSample.Repo, {:shared, self()})
+    end
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 

@@ -35,7 +35,7 @@ defmodule PhoenixSampleWeb.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_phoenix_sample_key",
-    signing_salt: "bCZZAxI0"
+    signing_salt: "JZ5G7pSP"
 
   plug PhoenixSampleWeb.Router
 
